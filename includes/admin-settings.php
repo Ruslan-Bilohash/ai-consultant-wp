@@ -60,6 +60,7 @@ function ai_consultant_wp_settings_page() {
             </div>
             
             <div class="header-right">
+				
           <!-- Жовта кнопка "Запропонувати покращення" -->
 <a href="https://github.com/ruslan-bilohash/ai-consultant-wp/issues" 
    target="_blank" 
@@ -76,6 +77,12 @@ function ai_consultant_wp_settings_page() {
                 <a href="https://bilohash.com/donate.php" target="_blank" class="header-btn donate-btn">
                     <span class="dashicons dashicons-heart"></span> Підтримати
                 </a>
+			<a href="https://bilohash.com/donate.php" 
+   target="_blank" 
+   class="pro-btn">
+    <span class="dashicons dashicons-cart"></span>
+    PRO
+</a>
             </div>
         </div>
 
@@ -311,8 +318,11 @@ function ai_consultant_wp_settings_page() {
 </div>
 
             <p class="submit">
-                <input type="submit" name="ai_consultant_save" class="button button-primary button-large" value="💾 Зберегти всі налаштування">
-            </p>
+    <input type="submit" 
+           name="ai_consultant_save" 
+           class="button button-primary button-large save-btn" 
+           value="💾 Зберегти всі налаштування">
+</p>
         </form>
     </div>
 
@@ -404,7 +414,98 @@ function ai_consultant_wp_settings_page() {
     transform: translateY(-2px);
     box-shadow: 0 6px 16px rgba(255, 193, 7, 0.6);
 }
-    </style>
+		/* Професійна червона кнопка PRO */
+.pro-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #ff1a4d, #e60033);
+    color: #ffffff;
+    padding: 12px 28px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 16px;
+    text-decoration: none;
+    transition: all 0.4s ease;
+    box-shadow: 0 6px 20px rgba(255, 26, 77, 0.45);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.pro-btn:hover {
+    background: linear-gradient(135deg, #e60033, #c40029);
+    transform: translateY(-4px) scale(1.08);
+    box-shadow: 0 12px 30px rgba(255, 26, 77, 0.6);
+    color: #fff;
+}
+
+.pro-btn .dashicons {
+    font-size: 20px;
+    line-height: 1;
+}
+/* Професійна червона кнопка PRO */
+.pro-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #ff1a4d, #e60033);
+    color: #ffffff;
+    padding: 12px 28px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 16px;
+    text-decoration: none;
+    transition: all 0.4s ease;
+    box-shadow: 0 6px 20px rgba(255, 26, 77, 0.45);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.pro-btn:hover {
+    background: linear-gradient(135deg, #e60033, #c40029);
+    transform: translateY(-4px) scale(1.08);
+    box-shadow: 0 12px 30px rgba(255, 26, 77, 0.6);
+    color: #fff;
+}
+
+.pro-btn .dashicons {
+    font-size: 20px;
+    line-height: 1;
+}
+		/* Гарна зелена кнопка "Зберегти всі налаштування" */
+.save-btn {
+    background: linear-gradient(135deg, #00cc66, #00aa55) !important;
+    color: #ffffff !important;
+    border: none !important;
+    padding: 16px 32px !important;
+    font-size: 17px !important;
+    font-weight: 700 !important;
+    border-radius: 50px !important;
+    box-shadow: 0 8px 25px rgba(0, 204, 102, 0.4) !important;
+    transition: all 0.4s ease !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+}
+
+.save-btn:hover {
+    background: linear-gradient(135deg, #00aa55, #008844) !important;
+    transform: translateY(-4px) scale(1.05) !important;
+    box-shadow: 0 12px 35px rgba(0, 204, 102, 0.55) !important;
+    color: #ffffff !important;
+}
+
+.save-btn:active {
+    transform: scale(0.98) !important;
+}
+
+/* Якщо потрібно зробити кнопку ще ширшою */
+.submit {
+    margin-top: 40px;
+}
+</style>
 
     <script>
     // Перемикання табів

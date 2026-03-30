@@ -19,7 +19,7 @@
 
 #### Адмін-панель налаштувань
 
-![Загальні налаштування](https://github.com/Ruslan-Bilohash/ai-consultant-wp/blob/main/screen/1-general.png)
+![Загальні налаштування](https://github.com/Ruslan-Bilohash/ai-consultant-wp/blob/main/screen/admin_main.jpg)
 
 ![Інструкція для бота (системний промпт)](https://github.com/Ruslan-Bilohash/ai-consultant-wp/blob/main/screen/2-prompt.png)
 

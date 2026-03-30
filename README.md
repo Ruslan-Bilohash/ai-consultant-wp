@@ -28,7 +28,7 @@
 
 ![Grok API](https://github.com/Ruslan-Bilohash/ai-consultant-wp/blob/main/screen/api_grok_key.jpg)
 
-![Telegram налаштування](https://github.com/Ruslan-Bilohash/ai-consultant-wp/blob/main/screen/api_telegram_key2.jpg)
+![Telegram налаштування](https://github.com/Ruslan-Bilohash/ai-consultant-wp/blob/main/screen/api_telegram_key.jpg)
 
 ![Вкладка Оновлення](https://github.com/Ruslan-Bilohash/ai-consultant-wp/blob/main/screen/upgrade.jpg)
 **Загальні налаштування**  

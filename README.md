@@ -16,8 +16,21 @@
 
 ### Скріншоти
 
-![Загальні налаштування](/screen/admin.png))
+#### Адмін-панель налаштувань
 
+![Загальні налаштування](https://github.com/Ruslan-Bilohash/ai-consultant-wp/blob/main/screen/admin_main.jpg)
+
+![Інструкція для бота (системний промпт)](https://github.com/Ruslan-Bilohash/ai-consultant-wp/blob/main/screen/instruction_bot.jpg)
+
+![Дизайн чату](https://github.com/Ruslan-Bilohash/ai-consultant-wp/blob/main/screen/designe_chat.jpg)
+
+![Плаваючий віджет](https://github.com/Ruslan-Bilohash/ai-consultant-wp/blob/main/screen/wigets.jpg)
+
+![Grok API](https://github.com/Ruslan-Bilohash/ai-consultant-wp/blob/main/screen/api_grok_key.jpg)
+
+![Telegram налаштування](https://github.com/Ruslan-Bilohash/ai-consultant-wp/blob/main/screen/api_telegram_key2.jpg)
+
+![Вкладка Оновлення](https://github.com/Ruslan-Bilohash/ai-consultant-wp/blob/main/screen/upgrade.jpg)
 **Загальні налаштування**  
 **Інструкція для бота (системний промпт)**  
 **Дизайн чату**  

@@ -59,8 +59,7 @@ GPL-2.0-or-later
 
 ### Автор
 
-**Руслан Билогаш**  
-Осло, Норвегія  
+**Руслан Билогаш**  Норвегія  
 [GitHub](https://github.com/ruslan-bilohash) | [Сайт](https://bilohash.com/ai/wordpress)
 
 ---

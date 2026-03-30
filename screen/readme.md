@@ -21,17 +21,17 @@
 
 ![Загальні налаштування](https://github.com/Ruslan-Bilohash/ai-consultant-wp/blob/main/screen/admin_main.jpg)
 
-![Інструкція для бота (системний промпт)](https://github.com/Ruslan-Bilohash/ai-consultant-wp/blob/main/screen/2-prompt.png)
+![Інструкція для бота (системний промпт)](https://github.com/Ruslan-Bilohash/ai-consultant-wp/blob/main/screen/instruction_bot.jpg)
 
-![Дизайн чату](https://github.com/Ruslan-Bilohash/ai-consultant-wp/blob/main/screen/3-design.png)
+![Дизайн чату](https://github.com/Ruslan-Bilohash/ai-consultant-wp/blob/main/screen/designe_chat.jpg)
 
-![Плаваючий віджет](https://github.com/Ruslan-Bilohash/ai-consultant-wp/blob/main/screen/4-widget.png)
+![Плаваючий віджет](https://github.com/Ruslan-Bilohash/ai-consultant-wp/blob/main/screen/wigets.jpg)
 
-![Grok API](https://github.com/Ruslan-Bilohash/ai-consultant-wp/blob/main/screen/5-grok.png)
+![Grok API](https://github.com/Ruslan-Bilohash/ai-consultant-wp/blob/main/screen/api_grok_key.jpg)
 
-![Telegram налаштування](https://github.com/Ruslan-Bilohash/ai-consultant-wp/blob/main/screen/6-telegram.png)
+![Telegram налаштування](https://github.com/Ruslan-Bilohash/ai-consultant-wp/blob/main/screen/api_telegram_key.jpg)
 
-![Вкладка Оновлення](https://github.com/Ruslan-Bilohash/ai-consultant-wp/blob/main/screen/7-updates.png)
+![Вкладка Оновлення](https://github.com/Ruslan-Bilohash/ai-consultant-wp/blob/main/screen/upgrade.jpg)
 
 ### Встановлення
 

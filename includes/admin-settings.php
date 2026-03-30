@@ -8,35 +8,34 @@ if (!defined('ABSPATH')) {
  * Версія 2.3.4
  * Розробник: Руслан Билогаш
  */
-
 function ai_consultant_wp_settings_page() {
     if (isset($_POST['ai_consultant_save'])) {
         check_admin_referer('ai_consultant_save_settings');
-        
+       
         $bot_icon = !empty($_POST['bot_icon_custom'])
             ? sanitize_text_field($_POST['bot_icon_custom'])
             : sanitize_text_field($_POST['bot_icon'] ?? '🧹');
 
         $new_settings = [
-            'enable_chat'       => !empty($_POST['enable_chat']),
-            'xai_api_key'       => sanitize_text_field($_POST['xai_api_key'] ?? ''),
-            'telegram_token'    => sanitize_text_field($_POST['telegram_token'] ?? ''),
-            'telegram_chat_id'  => (int)($_POST['telegram_chat_id'] ?? 0),
-            'primary_color'     => sanitize_hex_color($_POST['primary_color'] ?? '#00f5ff'),
-            'accent_color'      => sanitize_hex_color($_POST['accent_color'] ?? '#00d4ff'),
-            'header_gradient'   => sanitize_text_field($_POST['header_gradient'] ?? 'linear-gradient(135deg, #00f5ff 0%, #00d4ff 100%)'),
-            'chat_bg_color'     => sanitize_hex_color($_POST['chat_bg_color'] ?? '#0f0f2d'),
-            'bot_icon'          => $bot_icon,
-            'chat_title'        => sanitize_text_field($_POST['chat_title'] ?? 'AI Consultant'),
-            'chat_subtitle'     => sanitize_text_field($_POST['chat_subtitle'] ?? 'Profesionalus valymo konsultantas'),
-            'position'          => sanitize_text_field($_POST['position'] ?? 'right'),
-            'widget_color'      => sanitize_hex_color($_POST['widget_color'] ?? '#00f5ff'),
-            'widget_opacity'    => floatval($_POST['widget_opacity'] ?? 1.0),
-            'auto_open'         => !empty($_POST['auto_open']),
-            'auto_open_delay'   => (int)($_POST['auto_open_delay'] ?? 4000),
-            'welcome_text'      => wp_kses_post($_POST['welcome_text'] ?? ''),
-            'system_prompt'     => wp_kses_post($_POST['system_prompt'] ?? ''),
-            'enable_telegram'   => !empty($_POST['enable_telegram'])
+            'enable_chat'        => !empty($_POST['enable_chat']),
+            'xai_api_key'        => sanitize_text_field($_POST['xai_api_key'] ?? ''),
+            'telegram_token'     => sanitize_text_field($_POST['telegram_token'] ?? ''),
+            'telegram_chat_id'   => (int)($_POST['telegram_chat_id'] ?? 0),
+            'primary_color'      => sanitize_hex_color($_POST['primary_color'] ?? '#00f5ff'),
+            'accent_color'       => sanitize_hex_color($_POST['accent_color'] ?? '#00d4ff'),
+            'header_gradient'    => sanitize_text_field($_POST['header_gradient'] ?? 'linear-gradient(135deg, #00f5ff 0%, #00d4ff 100%)'),
+            'chat_bg_color'      => sanitize_hex_color($_POST['chat_bg_color'] ?? '#0f0f2d'),
+            'bot_icon'           => $bot_icon,
+            'chat_title'         => sanitize_text_field($_POST['chat_title'] ?? 'AI Consultant'),
+            'chat_subtitle'      => sanitize_text_field($_POST['chat_subtitle'] ?? 'Profesionalus valymo konsultantas'),
+            'position'           => sanitize_text_field($_POST['position'] ?? 'right'),
+            'widget_color'       => sanitize_hex_color($_POST['widget_color'] ?? '#00f5ff'),
+            'widget_opacity'     => floatval($_POST['widget_opacity'] ?? 1.0),
+            'auto_open'          => !empty($_POST['auto_open']),
+            'auto_open_delay'    => (int)($_POST['auto_open_delay'] ?? 4000),
+            'welcome_text'       => wp_kses_post($_POST['welcome_text'] ?? ''),
+            'system_prompt'      => wp_kses_post($_POST['system_prompt'] ?? ''),
+            'enable_telegram'    => !empty($_POST['enable_telegram'])
         ];
 
         update_option('ai_consultant_wp_settings', $new_settings);
@@ -45,44 +44,36 @@ function ai_consultant_wp_settings_page() {
 
     $settings = get_option('ai_consultant_wp_settings', ai_consultant_wp_default_settings());
     $current_version = '2.3.4';
-
     ?>
+
     <div class="wrap ai-consultant-settings">
 
-        <!-- ШАПКА З ІКОНКОЮ -->
+        <!-- ШАПКА -->
         <div class="ai-consultant-header">
             <div class="header-left">
                 <span class="dashicons dashicons-broom ai-logo-icon"></span>
                 <div>
                     <h1>AI Consultant WP</h1>
-                    <p class="version-info">Версія <?php echo esc_html($current_version); ?> • Розробник: Руслан Билогаш</p> - Перевірено на WordPress 6.9
+                    <p class="version-info">Версія <?php echo esc_html($current_version); ?> • Розробник: Руслан Билогаш - Перевірено на WordPress 6.9</p>
                 </div>
             </div>
-            
+           
             <div class="header-right">
-				
-          <!-- Жовта кнопка "Запропонувати покращення" -->
-<a href="https://github.com/ruslan-bilohash/ai-consultant-wp/issues" 
-   target="_blank" 
-   class="header-btn yellow-btn">
-    <span class="dashicons dashicons-lightbulb"></span>
-    Запропонувати покращення
-</a>
-				<a href="https://github.com/ruslan-bilohash" target="_blank" class="header-btn">
-    <span style="font-size:19px; line-height:1;">🐙</span> GitHub
-</a>
+                <a href="https://github.com/ruslan-bilohash/ai-consultant-wp/issues" target="_blank" class="header-btn yellow-btn">
+                    <span class="dashicons dashicons-lightbulb"></span> Запропонувати покращення
+                </a>
+                <a href="https://github.com/ruslan-bilohash" target="_blank" class="header-btn">
+                    <span style="font-size:19px; line-height:1;">🐙</span> GitHub
+                </a>
                 <a href="https://bilohash.com/ai" target="_blank" class="header-btn">
                     <span class="dashicons dashicons-admin-plugins"></span> Сайт плагіну
                 </a>
                 <a href="https://bilohash.com/donate.php" target="_blank" class="header-btn donate-btn">
                     <span class="dashicons dashicons-heart"></span> Підтримати
                 </a>
-			<a href="https://bilohash.com/donate.php" 
-   target="_blank" 
-   class="pro-btn">
-    <span class="dashicons dashicons-cart"></span>
-    PRO
-</a>
+                <a href="https://bilohash.com/donate.php" target="_blank" class="pro-btn">
+                    <span class="dashicons dashicons-cart"></span> PRO
+                </a>
             </div>
         </div>
 
@@ -91,6 +82,7 @@ function ai_consultant_wp_settings_page() {
 
             <h2 class="nav-tab-wrapper">
                 <a href="#" class="nav-tab nav-tab-active" data-tab="general">🛠 Загальні</a>
+                <a href="#" class="nav-tab" data-tab="demo">👁️ Демо чат</a>
                 <a href="#" class="nav-tab" data-tab="prompt">📝 Інструкція для бота</a>
                 <a href="#" class="nav-tab" data-tab="design">🎨 Дизайн чату</a>
                 <a href="#" class="nav-tab" data-tab="widget">📱 Плаваючий віджет</a>
@@ -120,7 +112,7 @@ function ai_consultant_wp_settings_page() {
                         <th scope="row">📌 Підзаголовок чату</th>
                         <td>
                             <input type="text" name="chat_subtitle" value="<?php echo esc_attr($settings['chat_subtitle']); ?>" class="regular-text">
-                            <p class="description">Короткий опис під заголовком (наприклад: "Profesionalus valymo konsultantas" або "Встановлення AI-віджетів").</p>
+                            <p class="description">Короткий опис під заголовком.</p>
                         </td>
                     </tr>
                     <tr>
@@ -141,6 +133,46 @@ function ai_consultant_wp_settings_page() {
                         </td>
                     </tr>
                 </table>
+            </div>
+
+            <!-- ====================== ДЕМО ЧАТ ====================== -->
+            <div id="tab-demo" class="tab-content" style="display:none;">
+                <h3>👁️ Демо чат — як виглядатиме на сайті</h3>
+                <p style="margin-bottom:25px;  text-align:center;">Змінюйте налаштування у вкладці «Загальні» — демо оновлюється автоматично</p>
+
+                <div style="max-width: 420px; margin: 0 auto; background:#0a0f24; border-radius:20px; overflow:hidden; box-shadow:0 20px 60px rgba(0,245,255,0.35);">
+                    <!-- Шапка чату -->
+                    <div style="background: <?php echo esc_attr($settings['header_gradient']); ?>; padding:18px 20px; display:flex; align-items:center; gap:14px; color:#000; font-weight:600;">
+                        <span style="font-size:32px;"><?php echo esc_html($settings['bot_icon']); ?></span>
+                        <div style="text-align:left;">
+                            <div style="font-size:18px;"><?php echo esc_html($settings['chat_title']); ?></div>
+                            <div style="font-size:13.5px; opacity:0.95;"><?php echo esc_html($settings['chat_subtitle']); ?></div>
+                        </div>
+                    </div>
+
+                    <!-- Тіло чату -->
+                    <div style="height: 380px; padding:20px; background: <?php echo esc_attr($settings['chat_bg_color']); ?>; overflow-y:auto; display:flex; flex-direction:column; gap:14px;">
+                        <div style="max-width:75%; background:#1e2a4a; padding:14px 18px; border-radius:16px 16px 16px 4px; align-self:flex-start;">
+                            Привіт! Я ваш AI-консультант з прибирання. Чим можу допомогти сьогодні?
+                        </div>
+                        <div style="max-width:75%; background:<?php echo esc_attr($settings['primary_color']); ?>; color:#000; padding:14px 18px; border-radius:16px 16px 4px 16px; align-self:flex-end;">
+                            Я хотів би дізнатися про вартість генерального прибирання квартири.
+                        </div>
+                    </div>
+
+                    <!-- Поле введення -->
+                    <div style="background:#111827; padding:16px; display:flex; gap:10px;">
+                        <input type="text" value="Напишіть повідомлення..." 
+                               style="flex:1; background:#1f2a44; border:none; border-radius:30px; padding:14px 20px; color:#888; font-size:15px;" readonly>
+                        <button style="width:52px; height:52px; background:<?php echo esc_attr($settings['primary_color']); ?>; color:#000; border:none; border-radius:50%; font-size:22px; display:flex; align-items:center; justify-content:center;">
+                            →
+                        </button>
+                    </div>
+                </div>
+
+                <p style="text-align:center; margin-top:25px; color:#666; font-size:14px;">
+                    Це живий попередній перегляд чату.
+                </p>
             </div>
 
             <!-- Інструкція для бота -->
@@ -288,45 +320,40 @@ function ai_consultant_wp_settings_page() {
                 </table>
             </div>
 
-            <!-- ВКЛАДКА ОНОВЛЕННЯ (оновлена) -->
-<div id="tab-updates" class="tab-content" style="display:none;">
-    <div class="update-box">
-        <h3>🔄 Оновлення плагіну</h3>
-        <p><strong>Поточна версія:</strong> <span class="current-ver">v<?php echo esc_html($current_version); ?></span></p>
-
-        <button type="button" id="check-update-btn" class="button button-secondary" style="margin:20px 0 15px 0;">
-            🔄 Перевірити оновлення
-        </button>
-
-        <div id="update-result" style="min-height:130px;"></div>
-
-        <button type="button" id="download-update-btn" class="button button-primary button-large" style="display:none;">
-            ⬇️ Завантажити оновлення
-        </button>
-
-        <!-- Нова кнопка "Запропонувати покращення" -->
-        <div style="margin-top: 25px; padding-top: 20px; border-top: 1px solid #00f5ff33;">
-            <a href="https://github.com/ruslan-bilohash/ai-consultant-wp/issues" 
-               target="_blank" 
-               class="button button-primary suggest-btn" 
-               style="background: linear-gradient(135deg, #ffeb3b, #ffc107); color: #000; font-weight: 600; padding: 10px 20px; border-radius: 8px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
-                <span class="dashicons dashicons-lightbulb" style="font-size: 18px;"></span>
-                Запропонувати покращення
-            </a>
-        </div>
-    </div>
-</div>
+            <!-- Оновлення -->
+            <div id="tab-updates" class="tab-content" style="display:none;">
+                <div class="update-box">
+                    <h3>🔄 Оновлення плагіну</h3>
+                    <p><strong>Поточна версія:</strong> <span class="current-ver">v<?php echo esc_html($current_version); ?></span></p>
+                    <button type="button" id="check-update-btn" class="button button-secondary" style="margin:20px 0 15px 0;">
+                        🔄 Перевірити оновлення
+                    </button>
+                    <div id="update-result" style="min-height:130px;"></div>
+                    <button type="button" id="download-update-btn" class="button button-primary button-large" style="display:none;">
+                        ⬇️ Завантажити оновлення
+                    </button>
+                    <div style="margin-top: 25px; padding-top: 20px; border-top: 1px solid #00f5ff33;">
+                        <a href="https://github.com/ruslan-bilohash/ai-consultant-wp/issues"
+                           target="_blank"
+                           class="button button-primary suggest-btn"
+                           style="background: linear-gradient(135deg, #ffeb3b, #ffc107); color: #000; font-weight: 600; padding: 10px 20px; border-radius: 8px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
+                            <span class="dashicons dashicons-lightbulb" style="font-size: 18px;"></span>
+                            Запропонувати покращення
+                        </a>
+                    </div>
+                </div>
+            </div>
 
             <p class="submit">
-    <input type="submit" 
-           name="ai_consultant_save" 
-           class="button button-primary button-large save-btn" 
-           value="💾 Зберегти всі налаштування">
-</p>
+                <input type="submit"
+                       name="ai_consultant_save"
+                       class="button button-primary button-large save-btn"
+                       value="💾 Зберегти всі налаштування">
+            </p>
         </form>
     </div>
 
-    <!-- Стилі -->
+     <!-- Стилі -->
     <style>
         .ai-consultant-header {
             background: linear-gradient(135deg, #0a0a2e 0%, #1f1f52 100%);
@@ -508,7 +535,7 @@ function ai_consultant_wp_settings_page() {
 </style>
 
     <script>
-    // Перемикання табів
+    // Перемикання вкладок
     document.querySelectorAll('.nav-tab').forEach(function(tab) {
         tab.addEventListener('click', function(e) {
             e.preventDefault();
@@ -519,70 +546,56 @@ function ai_consultant_wp_settings_page() {
         });
     });
 
-    // Перевірка оновлення
-    document.getElementById('check-update-btn').addEventListener('click', function() {
-        const btn = this;
-        const resultDiv = document.getElementById('update-result');
+    // Перевірка оновлень (виправлено — працює навіть якщо вкладка прихована)
+    jQuery(document).ready(function($) {
+        $('#check-update-btn').on('click', function() {
+            const btn = $(this);
+            const resultDiv = $('#update-result');
+            btn.prop('disabled', true).text('🔄 Перевірка...');
 
-        btn.disabled = true;
-        btn.textContent = '🔄 Перевірка...';
-
-        jQuery.post(ajaxurl, {
-            action: 'ai_consultant_check_version',
-            nonce: '<?php echo wp_create_nonce('ai_check_version'); ?>'
-        }, function(response) {
-            if (response.success) {
-                const latest = response.data.version.trim();
-                const current = '<?php echo $current_version; ?>';
-
-                if (latest > current) {
-                    resultDiv.innerHTML = `<div class="notice notice-warning inline"><p>🎉 Доступна нова версія v${latest}!<br>Будь ласка, оновіться до останньої версії.</p></div>`;
-                    document.getElementById('download-update-btn').style.display = 'inline-block';
+            $.post(ajaxurl, {
+                action: 'ai_consultant_check_version',
+                nonce: '<?php echo wp_create_nonce('ai_check_version'); ?>'
+            }, function(response) {
+                if (response.success) {
+                    const latest = response.data.version.trim();
+                    const current = '<?php echo $current_version; ?>';
+                    if (latest > current) {
+                        resultDiv.html(`<div class="notice notice-warning inline"><p>🎉 Доступна нова версія v${latest}!<br>Будь ласка, оновіться до останньої версії.</p></div>`);
+                        $('#download-update-btn').show();
+                    } else {
+                        resultDiv.html(`<div class="notice notice-success inline"><p>👏 Ви молодець!<br>У вас встановлена остання версія!</p></div>`);
+                    }
                 } else {
-                    resultDiv.innerHTML = `<div class="notice notice-success inline"><p>👏 Ви молодець!<br>У вас встановлена остання версія!<br>Так тримати!</p></div>`;
-                    document.getElementById('download-update-btn').style.display = 'none';
+                    resultDiv.html(`<div class="notice notice-error inline"><p>❌ ${response.data.message || 'Не вдалося перевірити оновлення.'}</p></div>`);
                 }
-            } else {
-                resultDiv.innerHTML = `<div class="notice notice-error inline"><p>❌ ${response.data.message || 'Не вдалося перевірити оновлення.'}</p></div>`;
-            }
-        }).fail(function() {
-            resultDiv.innerHTML = `<div class="notice notice-error inline"><p>❌ Не вдалося перевірити оновлення.<br>Перевірте підключення або спробуйте пізніше.</p></div>`;
-        }).always(function() {
-            btn.disabled = false;
-            btn.textContent = '🔄 Перевірити оновлення';
+            }).fail(function() {
+                resultDiv.html('<div class="notice notice-error inline"><p>❌ Не вдалося перевірити оновлення. Спробуйте пізніше.</p></div>');
+            }).always(function() {
+                btn.prop('disabled', false).text('🔄 Перевірити оновлення');
+            });
         });
     });
-
-    // Заглушка для завантаження
-    document.getElementById('download-update-btn').addEventListener('click', function() {
-        const msg = document.getElementById('update-result');
-        msg.innerHTML += '<div class="notice notice-info"><p>🔧 Автоматичне завантаження в розробці. Оновлення можна завантажити вручну з bilohash.com/ai</p></div>';
-    });
     </script>
+
     <?php
 }
 
 // AJAX обробник
 add_action('wp_ajax_ai_consultant_check_version', 'ai_consultant_check_version_ajax');
-
 function ai_consultant_check_version_ajax() {
     check_ajax_referer('ai_check_version', 'nonce');
-
-    $response = wp_remote_get('https://bilohash.com/ai/versione.php', [
-        'timeout'   => 15,
+    $response = wp_remote_get('https://bilohash.com/ai/wordpress/versione.php', [
+        'timeout' => 15,
         'sslverify' => false
     ]);
-
     if (is_wp_error($response)) {
         wp_send_json_error(['message' => 'Не вдалося підключитися до сервера оновлень.']);
     }
-
     $latest_version = trim(wp_remote_retrieve_body($response));
-
     if (empty($latest_version)) {
         wp_send_json_error(['message' => 'Сервер повернув порожню відповідь.']);
     }
-
     wp_send_json_success(['version' => $latest_version]);
 }
 ?>

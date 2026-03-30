@@ -9,7 +9,7 @@
 
     const API_URL = aiConsultantWP.ajax_url;
     const SESSION_KEY = 'ai_consultant_session';
-
+    
     let session = localStorage.getItem(SESSION_KEY);
     if (!session) {
         session = 's_' + Date.now() + '_' + Math.random().toString(36).substring(2, 16);
@@ -96,20 +96,34 @@
     const inputArea = document.createElement('div');
     inputArea.style.cssText = `padding:18px 22px; border-top:1px solid rgba(0,245,255,0.25); background:rgba(15,15,45,0.98); display:flex; gap:12px;`;
     inputArea.innerHTML = `
-        <input id="chat-input" type="text" placeholder="Напишіть повідомлення..." 
+        <input id="chat-input" type="text" placeholder="Напишіть повідомлення..."
                style="flex:1; padding:16px 24px; background:rgba(255,255,255,0.1); border:1px solid rgba(0,245,255,0.4); border-radius:9999px; outline:none; font-size:16px; color:#fff;">
         <button id="chat-send" style="background:linear-gradient(90deg,${aiConsultantWP.primary_color || '#00f5ff'},${aiConsultantWP.accent_color || '#0099ff'}); color:#000; border:none; border-radius:9999px; width:60px; height:60px; cursor:pointer;font-size:28px;font-weight:bold;">→</button>
     `;
 
-    container.append(header, messages, inputArea);
+    // === ФУТЕР ЧАТУ з посиланням ===
+    const footerLink = document.createElement('div');
+    footerLink.style.cssText = `
+        padding: 10px 20px;
+        text-align: center;
+        font-size: 12.5px;
+        color: rgba(255,255,255,0.45);
+        background: rgba(0,0,0,0.3);
+        border-top: 1px solid rgba(0,245,255,0.2);
+    `;
+    footerLink.innerHTML = `
+        Powered by <a href="https://bilohash.com/ai" target="_blank" style="color:#00f5ff; text-decoration:none;">AI Consultant WP</a>
+    `;
+
+    container.append(header, messages, inputArea, footerLink);
     document.body.appendChild(container);
 
     function addMsg(text, from) {
         const div = document.createElement('div');
         div.style.cssText = `
             max-width:86%; padding:14px 20px; border-radius:22px; line-height:1.55; font-size:15.8px;
-            ${from === 'client' ? 
-                `align-self:flex-end; background:linear-gradient(90deg,${aiConsultantWP.primary_color || '#00f5ff'},${aiConsultantWP.accent_color || '#0099ff'}); color:#000;` : 
+            ${from === 'client' ?
+                `align-self:flex-end; background:linear-gradient(90deg,${aiConsultantWP.primary_color || '#00f5ff'},${aiConsultantWP.accent_color || '#0099ff'}); color:#000;` :
                 'align-self:flex-start; background:rgba(255,255,255,0.18); color:#fff;'}
         `;
         div.textContent = text;
@@ -138,7 +152,7 @@
             if (data.reply) addMsg(data.reply, 'bot');
             else if (data.error) addMsg('Помилка: ' + data.error, 'bot');
         } catch (e) {
-            addMsg('Вибачте, проблема зі зв’язком. bilohash.com/ai', 'bot');
+            addMsg('Вибачте, проблема зі зв’язком.', 'bot');
         }
     }
 
@@ -149,7 +163,7 @@
                 container.style.display = 'flex';
                 openBtn.style.display = 'none';
                 setTimeout(() => {
-                    if (messages.children.length === 0) addMsg(aiConsultantWP.welcome_text, 'bot');
+                    if (messages.children.length === 0) addMsg(aiConsultantWP.welcome_text || 'Привіт! Чим можу допомогти?', 'bot');
                 }, 600);
             }
         }, aiConsultantWP.auto_open_delay || 4000);

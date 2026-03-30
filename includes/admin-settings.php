@@ -54,7 +54,7 @@ function ai_consultant_wp_settings_page() {
                 <span class="dashicons dashicons-broom ai-logo-icon"></span>
                 <div>
                     <h1>AI Consultant WP</h1>
-                    <p class="version-info">Версія <?php echo esc_html($current_version); ?> • Розробник: Руслан Билогаш - Перевірено на WordPress 6.9</p>
+                    <p class="version-info">Версія beta <?php echo esc_html($current_version); ?> • Розробник: Руслан Билогаш - Перевірено на WordPress 6.9</p>
                 </div>
             </div>
            
@@ -352,7 +352,14 @@ function ai_consultant_wp_settings_page() {
             </p>
         </form>
     </div>
-
+<footer style="background:#0a0a1f; padding:28px 20px; text-align:center; border-top:1px solid #00f5ff30; font-size:14.5px;">
+    <div class="container">
+        <p style="opacity:0.75;">
+            Це мій перший плагін для WordPress. Працює в тестовому режимі та розповсюджується безкоштовно. 
+            <a href="https://github.com/ruslan-bilohash/ai-consultant-wp" target="_blank" style="color:#00f5ff; text-decoration:underline;">Поставте зірочку на GitHub ⭐</a>
+        </p>
+    </div>
+</footer>
      <!-- Стилі -->
     <style>
         .ai-consultant-header {

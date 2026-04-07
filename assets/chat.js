@@ -1,188 +1,132 @@
-// assets/chat.js — сучасний дизайн з повною підтримкою налаштувань віджету (версія 2.3.4)
+/**
+ * CRM AI Consultant Chat Widget
+ * Version: 2.6.9 — Футер всередині чату (як ти просив)
+ */
+
 (function () {
     'use strict';
 
-    if (typeof aiConsultantWP === 'undefined') {
-        console.error('AI Consultant: налаштування не завантажено');
+    if (!window.crmAI || !window.crmAI.site_id) {
+        console.error('CRM AI: crmAI not initialized');
         return;
     }
 
-    const API_URL = aiConsultantWP.ajax_url;
-    const SESSION_KEY = 'ai_consultant_session';
-    
+    const s = window.crmAI;
+    const SESSION_KEY = 'crm_ai_session_' + s.site_id;
     let session = localStorage.getItem(SESSION_KEY);
+
     if (!session) {
-        session = 's_' + Date.now() + '_' + Math.random().toString(36).substring(2, 16);
+        session = 's_' + Date.now() + '_' + Math.random().toString(36).substr(2, 12);
         localStorage.setItem(SESSION_KEY, session);
     }
 
-    // === ПЛАВАЮЧА КНОПКА ВІДЖЕТУ ===
+    console.log('✅ CRM AI Consultant: віджет запущено для', s.site_id);
+
+    // Плаваюча кнопка
     const openBtn = document.createElement('button');
-    openBtn.id = 'ai-consultant-open-btn';
     openBtn.style.cssText = `
-        position: fixed;
-        bottom: 28px;
-        ${aiConsultantWP.position === 'left' ? 'left: 28px; right: auto;' : 'right: 28px; left: auto;'}
-        width: 78px;
-        height: 78px;
-        background: ${aiConsultantWP.widget_color || '#00f5ff'};
-        opacity: ${aiConsultantWP.widget_opacity || 1};
-        color: #000;
-        border: none;
-        border-radius: 50%;
-        font-size: 42px;
-        cursor: pointer;
-        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
-        z-index: 99998;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: all 0.3s ease;
+        position:fixed; bottom:25px; ${s.position==='left'?'left:25px':'right:25px'};
+        width:68px; height:68px; background:${s.widget_color || '#22d3ee'}; color:#fff;
+        border:none; border-radius:50%; font-size:34px; cursor:pointer; z-index:99999;
+        box-shadow:0 10px 30px rgba(0,0,0,0.4);
     `;
-    openBtn.innerHTML = aiConsultantWP.bot_icon || '🧹';
+    openBtn.innerHTML = s.bot_icon || '🤖';
     document.body.appendChild(openBtn);
 
-    // === Вікно чату ===
-    const container = document.createElement('div');
-    container.id = 'ai-consultant-chat';
-    container.style.cssText = `
-        position: fixed;
-        bottom: 20px;
-        ${aiConsultantWP.position === 'left' ? 'left: 20px; right: auto;' : 'right: 20px;'}
-        width: 420px;
-        max-width: 94vw;
-        height: 680px;
-        background: ${aiConsultantWP.chat_bg_color || '#0f0f2d'};
-        backdrop-filter: blur(24px);
-        border-radius: 28px;
-        box-shadow: 0 25px 80px -15px rgba(0,245,255,0.5);
-        display: none;
-        flex-direction: column;
-        overflow: hidden;
-        z-index: 99999;
-        border: 1px solid rgba(0,245,255,0.3);
-        font-family: system-ui, -apple-system, sans-serif;
-        transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    // Вікно чату
+    const chat = document.createElement('div');
+    chat.style.cssText = `
+        position:fixed; bottom:20px; ${s.position==='left'?'left:20px':'right:20px'};
+        width:400px; max-width:92vw; height:620px; max-height:85vh;
+        background:${s.chat_bg_color || '#0f172a'}; 
+        border-radius:24px; 
+        box-shadow:0 20px 60px rgba(0,0,0,0.6);
+        display:none; flex-direction:column; z-index:99999; overflow:hidden;
+        border:1px solid rgba(148,163,184,0.3);
     `;
 
-    const header = document.createElement('div');
-    header.style.cssText = `
-        background: ${aiConsultantWP.header_gradient || 'linear-gradient(135deg, #00f5ff 0%, #0099ff 100%)'};
-        color: #000;
-        padding: 20px 24px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        font-weight: 800;
-        font-size: 20px;
-        border-radius: 28px 28px 0 0;
-    `;
-    header.innerHTML = `
-        <div style="display:flex;align-items:center;gap:14px;">
-            <div style="width:52px;height:52px;background:#000;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:32px;box-shadow:0 0 20px rgba(0,245,255,0.6);">
-                ${aiConsultantWP.bot_icon || '🧹'}
+    chat.innerHTML = `
+        <div style="background:${s.header_bg_color || '#1e2937'}; padding:18px 20px; color:#fff; display:flex; align-items:center; justify-content:space-between;">
+            <div style="display:flex; align-items:center; gap:12px;">
+                <div style="font-size:32px;">${s.bot_icon || '🤖'}</div>
+                <div>
+                    <div style="font-weight:700;">${s.chat_title || 'AI Consultant'}</div>
+                    <div style="font-size:13px; opacity:0.85;">${s.chat_subtitle || 'Швидка допомога'}</div>
+                </div>
             </div>
-            <div>
-                <div>${aiConsultantWP.chat_title || 'AI Consultant'}</div>
-                <div style="font-size:13.8px;opacity:0.9;">${aiConsultantWP.chat_subtitle || 'Profesionalus valymo konsultantas'}</div>
-            </div>
+            <button id="closeBtn" style="background:none; border:none; color:#fff; font-size:28px; cursor:pointer;">×</button>
         </div>
-        <button id="close-chat" style="background:none;border:none;color:#000;font-size:34px;cursor:pointer;line-height:1;padding:0 8px;">×</button>
+        
+        <div id="messages" style="flex:1; padding:20px; overflow-y:auto; background:${s.chat_bg_color || '#0f172a'};"></div>
+        
+        <!-- Кнопка відправки -->
+        <div style="padding:15px 20px; background:rgba(15,23,42,0.98); display:flex; gap:10px;">
+            <input id="inputField" type="text" placeholder="Напишіть повідомлення..." 
+                   style="flex:1; padding:14px 18px; background:rgba(255,255,255,0.1); border:1px solid rgba(148,163,184,0.4); border-radius:9999px; color:#fff; outline:none;">
+            <button id="sendBtn" style="width:56px; height:56px; background:${s.widget_color || '#22d3ee'}; border:none; border-radius:9999px; color:#000; font-size:24px;">→</button>
+        </div>
+
+        <!-- Футер всередині чату (як ти просив) -->
+        <div style="padding:8px 20px; text-align:center; font-size:11px; color:#64748b; background:rgba(0,0,0,0.4); border-top:1px solid rgba(148,163,184,0.2);">
+            Powered by <a href="https://bilohash.com/" target="_blank" style="color:#67e8f9; text-decoration:none;">CRM AI Consultant</a>
+        </div>
     `;
 
-    const messages = document.createElement('div');
-    messages.style.cssText = `flex:1; padding:24px 22px; overflow-y:auto; background:rgba(10,10,31,0.95); display:flex; flex-direction:column; gap:16px;`;
+    document.body.appendChild(chat);
 
-    const inputArea = document.createElement('div');
-    inputArea.style.cssText = `padding:18px 22px; border-top:1px solid rgba(0,245,255,0.25); background:rgba(15,15,45,0.98); display:flex; gap:12px;`;
-    inputArea.innerHTML = `
-        <input id="chat-input" type="text" placeholder="Напишіть повідомлення..."
-               style="flex:1; padding:16px 24px; background:rgba(255,255,255,0.1); border:1px solid rgba(0,245,255,0.4); border-radius:9999px; outline:none; font-size:16px; color:#fff;">
-        <button id="chat-send" style="background:linear-gradient(90deg,${aiConsultantWP.primary_color || '#00f5ff'},${aiConsultantWP.accent_color || '#0099ff'}); color:#000; border:none; border-radius:9999px; width:60px; height:60px; cursor:pointer;font-size:28px;font-weight:bold;">→</button>
-    `;
+    const messagesDiv = document.getElementById('messages');
+    const inputField = document.getElementById('inputField');
 
-    // === ФУТЕР ЧАТУ з посиланням ===
-    const footerLink = document.createElement('div');
-    footerLink.style.cssText = `
-        padding: 10px 20px;
-        text-align: center;
-        font-size: 12.5px;
-        color: rgba(255,255,255,0.45);
-        background: rgba(0,0,0,0.3);
-        border-top: 1px solid rgba(0,245,255,0.2);
-    `;
-    footerLink.innerHTML = `
-        Powered by <a href="https://bilohash.com/ai" target="_blank" style="color:#00f5ff; text-decoration:none;">AI Consultant WP</a>
-    `;
-
-    container.append(header, messages, inputArea, footerLink);
-    document.body.appendChild(container);
-
-    function addMsg(text, from) {
+    function addMessage(text, isUser) {
         const div = document.createElement('div');
-        div.style.cssText = `
-            max-width:86%; padding:14px 20px; border-radius:22px; line-height:1.55; font-size:15.8px;
-            ${from === 'client' ?
-                `align-self:flex-end; background:linear-gradient(90deg,${aiConsultantWP.primary_color || '#00f5ff'},${aiConsultantWP.accent_color || '#0099ff'}); color:#000;` :
-                'align-self:flex-start; background:rgba(255,255,255,0.18); color:#fff;'}
-        `;
+        div.style.cssText = isUser 
+            ? `margin-left:auto; background:${s.user_bubble_color || '#22d3ee'}; color:#000; padding:12px 18px; border-radius:18px 18px 4px 18px; max-width:80%; margin-bottom:10px;`
+            : `margin-right:auto; background:${s.bot_bubble_color || '#334155'}; color:#fff; padding:12px 18px; border-radius:18px 18px 18px 4px; max-width:80%; margin-bottom:10px;`;
         div.textContent = text;
-        messages.appendChild(div);
-        messages.scrollTop = messages.scrollHeight;
+        messagesDiv.appendChild(div);
+        messagesDiv.scrollTop = messagesDiv.scrollHeight;
     }
 
     async function sendMessage() {
-        const input = document.getElementById('chat-input');
-        const text = (input.value || '').trim();
+        const text = inputField.value.trim();
         if (!text) return;
 
-        addMsg(text, 'client');
-        input.value = '';
+        addMessage(text, true);
+        inputField.value = '';
+
+        const fd = new FormData();
+        fd.append('action', 'crm_ai_send');
+        fd.append('session', session);
+        fd.append('message', text);
+        fd.append('site_id', s.site_id);
 
         try {
-            const formData = new FormData();
-            formData.append('action', 'ai_consultant_bot');
-            formData.append('session', session);
-            formData.append('message', text);
-            formData.append('nonce', aiConsultantWP.nonce || '');
-
-            const r = await fetch(API_URL, { method: 'POST', body: formData });
-            const data = await r.json();
-
-            if (data.reply) addMsg(data.reply, 'bot');
-            else if (data.error) addMsg('Помилка: ' + data.error, 'bot');
+            const res = await fetch(s.ajax_url, { method: 'POST', body: fd });
+            const result = await res.json();
+            if (result.success) {
+                addMessage(result.message || 'Повідомлення надіслано', false);
+            } else {
+                addMessage('Помилка: ' + (result.message || ''), false);
+            }
         } catch (e) {
-            addMsg('Вибачте, проблема зі зв’язком.', 'bot');
+            addMessage('Помилка зв\'язку', false);
         }
     }
 
-    // Авто-відкриття
-    if (aiConsultantWP.auto_open) {
-        setTimeout(() => {
-            if (container.style.display !== 'flex') {
-                container.style.display = 'flex';
-                openBtn.style.display = 'none';
-                setTimeout(() => {
-                    if (messages.children.length === 0) addMsg(aiConsultantWP.welcome_text || 'Привіт! Чим можу допомогти?', 'bot');
-                }, 600);
-            }
-        }, aiConsultantWP.auto_open_delay || 4000);
-    }
-
     // Події
-    openBtn.onclick = () => {
-        container.style.display = 'flex';
-        openBtn.style.display = 'none';
+    openBtn.onclick = () => { 
+        chat.style.display = 'flex'; 
+        openBtn.style.display = 'none'; 
     };
-
-    document.getElementById('close-chat').onclick = () => {
-        container.style.display = 'none';
-        openBtn.style.display = 'block';
+    
+    document.getElementById('closeBtn').onclick = () => { 
+        chat.style.display = 'none'; 
+        openBtn.style.display = 'block'; 
     };
-
-    document.getElementById('chat-send').onclick = sendMessage;
-    document.getElementById('chat-input').addEventListener('keypress', e => {
-        if (e.key === 'Enter') sendMessage();
+    
+    document.getElementById('sendBtn').onclick = sendMessage;
+    inputField.addEventListener('keypress', e => { 
+        if (e.key === 'Enter') sendMessage(); 
     });
 
 })();

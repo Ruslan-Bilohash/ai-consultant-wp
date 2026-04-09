@@ -8,12 +8,12 @@
     'use strict';
 
     // Надійна перевірка наявності налаштувань
-    if (typeof aiConsultant === 'undefined' || !aiConsultant.ajax_url) {
+    if (typeof aiConsultantWP === 'undefined' || !aiConsultantWP.ajax_url) {
         console.error('AI Consultant: налаштування не завантажено. Перевірте wp_localize_script у головному файлі плагіна.');
         return;
     }
 
-    const s = aiConsultant; // коротке ім'я для зручності
+    const s = aiConsultantWP; // коротке ім'я для зручності
 
     const API_URL = s.ajax_url;
     const NONCE   = s.nonce || '';

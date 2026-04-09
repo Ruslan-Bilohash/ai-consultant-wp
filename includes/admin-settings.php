@@ -594,7 +594,6 @@ function ai_consultant_check_version_ajax() {
     check_ajax_referer('ai_check_version', 'nonce');
     $response = wp_remote_get('https://bilohash.com/ai/wordpress/versione.php', [
         'timeout' => 15,
-        'sslverify' => false
     ]);
     if (is_wp_error($response)) {
         wp_send_json_error(['message' => 'Не вдалося підключитися до сервера оновлень.']);

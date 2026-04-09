@@ -13,9 +13,13 @@ define('GROK_MODEL', 'grok-4.20-0309-non-reasoning');
 define('CONVERSATIONS_DIR', AI_CONSULTANT_WP_PATH . 'conversations');
 define('LOG_DIR', AI_CONSULTANT_WP_PATH . 'logs');
 
-if (!is_dir(CONVERSATIONS_DIR)) wp_mkdir_p(CONVERSATIONS_DIR);
-if (!is_dir(LOG_DIR)) wp_mkdir_p(LOG_DIR);
-
-// Безпека
-header('X-Frame-Options: DENY');
-header('X-Content-Type-Options: nosniff');
+if (!is_dir(CONVERSATIONS_DIR)) {
+    wp_mkdir_p(CONVERSATIONS_DIR);
+    file_put_contents(CONVERSATIONS_DIR . '/.htaccess', "deny from all\nRequire all denied\n");
+    file_put_contents(CONVERSATIONS_DIR . '/index.php', '<?php // Silence is golden');
+}
+if (!is_dir(LOG_DIR)) {
+    wp_mkdir_p(LOG_DIR);
+    file_put_contents(LOG_DIR . '/.htaccess', "deny from all\nRequire all denied\n");
+    file_put_contents(LOG_DIR . '/index.php', '<?php // Silence is golden');
+}

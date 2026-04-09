@@ -5,15 +5,16 @@ if (!defined('ABSPATH')) {
 
 // === Отримуємо дані ===
 $session = sanitize_text_field($_POST['session'] ?? '');
-$message = trim(sanitize_text_field($_POST['message'] ?? ''));
+$message = trim(sanitize_textarea_field($_POST['message'] ?? ''));
 
 if (empty($message)) {
     wp_send_json(['error' => 'Порожнє повідомлення']);
     exit;
 }
 
-// Валідація формату сесії для запобігання path traversal атаці
-if (!preg_match('/^s_\d+_[a-z0-9]{6,16}$/i', $session)) {
+// Валідація формату сесії для запобігання path traversal атаці.
+// Очікуваний формат: s_<timestamp>_<base36-random> (генерується chat.js).
+if (!preg_match('/^s_\d+_[a-z0-9]{1,16}$/i', $session)) {
     wp_send_json(['error' => 'Невірний формат сесії']);
     exit;
 }

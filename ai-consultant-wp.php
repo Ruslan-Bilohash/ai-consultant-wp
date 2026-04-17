@@ -2,13 +2,13 @@
 /**
  * Plugin Name: AI Consultant WP
  * Plugin URI: https://bilohash.com/ai
- * Autor URI: https://bilohash.com/
+ * Author URI: https://bilohash.com/
  * Description: Розумний AI-чатбот з Grok xAI та Telegram. Повністю налаштовується з адмін-панелі: ключі, кольори, іконка, позиція віджету, прозорість, авто-відкриття тощо.
  * Version: 2.3.4
- * Author: Ruslan Bilohash 
- * Text Domain: AI-Consultant-WP
- * Requires PHP: 8.2
- * Requires WP: 6.9
+ * Author: Ruslan Bilohash
+ * Text Domain: ai-consultant-wp
+ * Requires PHP: 8.0
+ * Requires at least: 6.0
  */
 
 if (!defined('ABSPATH')) {

@@ -1,0 +1,170 @@
+# Copyright (C) 2026 Ruslan Bilohash
+msgid ""
+msgstr ""
+"Project-Id-Version: AI Consultant 2.4.0\n"
+"Report-Msgid-Bugs-To: https://github.com/Ruslan-Bilohash/ai-consultant-wp/issues\n"
+"POT-Creation-Date: 2026-04-18 23:00+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: English\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "AI Consultant"
+msgstr ""
+
+msgid "Modern Grok (xAI) powered chatbot for WordPress with real-time Telegram notifications. Fully customizable design."
+msgstr ""
+
+msgid "✅ Settings saved successfully!"
+msgstr ""
+
+msgid "Insufficient permissions to access."
+msgstr ""
+
+msgid "🟢 Enable Chatbot"
+msgstr ""
+
+msgid "Main switch. If disabled, the chat will completely disappear from the site."
+msgstr ""
+
+msgid "📌 Chat Title"
+msgstr ""
+
+msgid "📌 Chat Subtitle"
+msgstr ""
+
+msgid "🧹 Bot Icon"
+msgstr ""
+
+msgid "Choose an icon or enter your own emoji below."
+msgstr ""
+
+msgid "🎨 Chat Design"
+msgstr ""
+
+msgid "Choose colors for the chat. Changes are visible immediately in the live preview."
+msgstr ""
+
+msgid "Primary Color"
+msgstr ""
+
+msgid "(client messages)"
+msgstr ""
+
+msgid "Accent Color"
+msgstr ""
+
+msgid "🌈 Header Gradient"
+msgstr ""
+
+msgid "🖼 Chat Background Color"
+msgstr ""
+
+msgid "📍 Floating Button Position"
+msgstr ""
+
+msgid "Right"
+msgstr ""
+
+msgid "Left"
+msgstr ""
+
+msgid "⏱ Auto-open Chat"
+msgstr ""
+
+msgid "⏱ Auto-open Delay (ms)"
+msgstr ""
+
+msgid "🧠 Grok xAI API"
+msgstr ""
+
+msgid "The chatbot requires a Grok xAI API key to function. Without it, the bot cannot respond."
+msgstr ""
+
+msgid "🔑 Grok xAI API Key"
+msgstr ""
+
+msgid "How to get the key:"
+msgstr ""
+
+msgid "Go to"
+msgstr ""
+
+msgid "Log in with your X (Twitter) account"
+msgstr ""
+
+msgid "Click \"Create new API key\""
+msgstr ""
+
+msgid "Copy the key and paste it here"
+msgstr ""
+
+msgid "Important: The key starts with"
+msgstr ""
+
+msgid "📲 Telegram Notifications"
+msgstr ""
+
+msgid "The plugin can send all customer messages to you in Telegram."
+msgstr ""
+
+msgid "🤖 Telegram Bot Token"
+msgstr ""
+
+msgid "👤 Your Telegram Chat ID"
+msgstr ""
+
+msgid "📨 Enable Notifications"
+msgstr ""
+
+msgid "Send all customer messages to me in Telegram"
+msgstr ""
+
+msgid "💾 Save All Settings"
+msgstr ""
+
+msgid "Hi! 💻 I'm an AI consultant from bilohash.com."
+msgstr ""
+
+msgid "Hello! How can I help you today?"
+msgstr ""
+
+msgid "Consultant is thinking..."
+msgstr ""
+
+msgid "Failed to get response from the bot."
+msgstr ""
+
+msgid "Sorry, there was a connection issue. Please try again."
+msgstr ""
+
+msgid "Empty message"
+msgstr ""
+
+msgid "Grok API key is not configured."
+msgstr ""
+
+msgid "Too many requests. Please try again later."
+msgstr ""
+
+msgid "Unfortunately, there is a problem connecting to the Grok API. Please try again later."
+msgstr ""
+
+msgid "Invalid Grok API key."
+msgstr ""
+
+msgid "Grok API returned an error"
+msgstr ""
+
+msgid "Settings"
+msgstr ""
+
+msgid "Version"
+msgstr ""
+
+msgid "Powered by"
+msgstr ""

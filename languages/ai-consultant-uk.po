@@ -1,0 +1,170 @@
+# Copyright (C) 2026 Ruslan Bilohash
+msgid ""
+msgstr ""
+"Project-Id-Version: AI Consultant 2.4.0\n"
+"Report-Msgid-Bugs-To: https://github.com/Ruslan-Bilohash/ai-consultant-wp/issues\n"
+"POT-Creation-Date: 2026-04-18 23:00+0000\n"
+"PO-Revision-Date: 2026-04-18 23:00+0000\n"
+"Last-Translator: Ruslan Bilohash <email@bilohash.com>\n"
+"Language-Team: Ukrainian\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+msgid "AI Consultant"
+msgstr "AI Consultant"
+
+msgid "Modern Grok (xAI) powered chatbot for WordPress with real-time Telegram notifications. Fully customizable design."
+msgstr "Сучасний чатбот на базі Grok (xAI) для WordPress зі сповіщеннями в Telegram у реальному часі. Повністю налаштовуваний дизайн."
+
+msgid "✅ Settings saved successfully!"
+msgstr "✅ Налаштування успішно збережено!"
+
+msgid "Insufficient permissions to access."
+msgstr "Недостатньо прав для доступу."
+
+msgid "🟢 Enable Chatbot"
+msgstr "🟢 Увімкнути чатбот"
+
+msgid "Main switch. If disabled, the chat will completely disappear from the site."
+msgstr "Головний перемикач. Якщо вимкнути — чат повністю зникне зі сайту."
+
+msgid "📌 Chat Title"
+msgstr "📌 Заголовок чату"
+
+msgid "📌 Chat Subtitle"
+msgstr "📌 Підзаголовок чату"
+
+msgid "🧹 Bot Icon"
+msgstr "🧹 Іконка бота"
+
+msgid "Choose an icon or enter your own emoji below."
+msgstr "Оберіть іконку або вставте свій емодзі нижче."
+
+msgid "🎨 Chat Design"
+msgstr "🎨 Дизайн чату"
+
+msgid "Choose colors for the chat. Changes are visible immediately in the live preview."
+msgstr "Виберіть кольори для чату. Зміни видно відразу в попередньому перегляді."
+
+msgid "Primary Color"
+msgstr "Основний колір"
+
+msgid "(client messages)"
+msgstr "(повідомлення клієнта)"
+
+msgid "Accent Color"
+msgstr "Акцентний колір"
+
+msgid "🌈 Header Gradient"
+msgstr "🌈 Градієнт заголовка"
+
+msgid "🖼 Chat Background Color"
+msgstr "🖼 Колір фону чату"
+
+msgid "📍 Floating Button Position"
+msgstr "📍 Позиція плаваючої кнопки"
+
+msgid "Right"
+msgstr "Праворуч"
+
+msgid "Left"
+msgstr "Ліворуч"
+
+msgid "⏱ Auto-open Chat"
+msgstr "⏱ Авто-відкриття чату"
+
+msgid "⏱ Auto-open Delay (ms)"
+msgstr "⏱ Затримка авто-відкриття (мс)"
+
+msgid "🧠 Grok xAI API"
+msgstr "🧠 Grok xAI API"
+
+msgid "The chatbot requires a Grok xAI API key to function. Without it, the bot cannot respond."
+msgstr "Для роботи чатбота потрібен API ключ від xAI (Grok). Без нього бот не зможе відповідати."
+
+msgid "🔑 Grok xAI API Key"
+msgstr "🔑 Ключ API Grok xAI"
+
+msgid "How to get the key:"
+msgstr "Як отримати ключ:"
+
+msgid "Go to"
+msgstr "Перейдіть на"
+
+msgid "Log in with your X (Twitter) account"
+msgstr "Увійдіть через акаунт X (Twitter)"
+
+msgid "Click \"Create new API key\""
+msgstr "Натисніть \"Create new API key\""
+
+msgid "Copy the key and paste it here"
+msgstr "Скопіюйте ключ і вставте сюди"
+
+msgid "Important: The key starts with"
+msgstr "Важливо: Ключ починається з"
+
+msgid "📲 Telegram Notifications"
+msgstr "📲 Сповіщення в Telegram"
+
+msgid "The plugin can send all customer messages to you in Telegram."
+msgstr "Плагін може надсилати всі повідомлення клієнтів вам у Telegram."
+
+msgid "🤖 Telegram Bot Token"
+msgstr "🤖 Токен Telegram бота"
+
+msgid "👤 Your Telegram Chat ID"
+msgstr "👤 Ваш Telegram Chat ID"
+
+msgid "📨 Enable Notifications"
+msgstr "📨 Увімкнути сповіщення"
+
+msgid "Send all customer messages to me in Telegram"
+msgstr "Надсилати всі повідомлення клієнтів мені в Telegram"
+
+msgid "💾 Save All Settings"
+msgstr "💾 Зберегти всі налаштування"
+
+msgid "Hi! 💻 I'm an AI consultant from bilohash.com."
+msgstr "Привіт! 💻 Я AI-консультант від bilohash.com."
+
+msgid "Hello! How can I help you today?"
+msgstr "Привіт! Чим можу допомогти сьогодні?"
+
+msgid "Consultant is thinking..."
+msgstr "Консультант думає..."
+
+msgid "Failed to get response from the bot."
+msgstr "Не вдалося отримати відповідь від бота."
+
+msgid "Sorry, there was a connection issue. Please try again."
+msgstr "Вибачте, проблема зі зв’язком. Спробуйте ще раз."
+
+msgid "Empty message"
+msgstr "Порожнє повідомлення"
+
+msgid "Grok API key is not configured."
+msgstr "API ключ Grok не налаштовано."
+
+msgid "Too many requests. Please try again later."
+msgstr "Занадто багато запитів. Спробуйте пізніше."
+
+msgid "Unfortunately, there is a problem connecting to the Grok API. Please try again later."
+msgstr "На жаль, проблема з підключенням до Grok API. Спробуйте пізніше."
+
+msgid "Invalid Grok API key."
+msgstr "Невірний API ключ Grok."
+
+msgid "Grok API returned an error"
+msgstr "Grok API повернув помилку"
+
+msgid "Settings"
+msgstr "Налаштування"
+
+msgid "Version"
+msgstr "Версія"
+
+msgid "Powered by"
+msgstr "Працює на базі"

@@ -2,8 +2,6 @@
 
 **Modern Grok (xAI) powered chatbot for WordPress** with real-time Telegram notifications.
 
-![AI Consultant](https://raw.githubusercontent.com/Ruslan-Bilohash/ai-consultant-wp/main/assets/screenshot-1.png)
-
 ### Features
 - Powered by **Grok xAI** (latest model)
 - Real-time notifications to **Telegram**
@@ -27,9 +25,6 @@
 - Grok xAI API key (get it at [console.x.ai](https://console.x.ai/))
 
 ### Screenshots
-
-![Settings](https://raw.githubusercontent.com/Ruslan-Bilohash/ai-consultant-wp/main/assets/screenshot-2.png)
-![Chat Widget](https://raw.githubusercontent.com/Ruslan-Bilohash/ai-consultant-wp/main/assets/screenshot-3.png)
 
 ### Links
 - [Plugin on WordPress.org](https://wordpress.org/plugins/ai-consultant/) (soon)

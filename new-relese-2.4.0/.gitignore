@@ -1,0 +1,26 @@
+# WordPress
+wp-config.php
+wp-content/
+wp-admin/
+wp-includes/
+
+# Node modules
+node_modules/
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+.DS_Store
+Thumbs.db
+*.tmp
+*.temp
+
+# IDE
+.vscode/
+.idea/
+*.sublime-*
+
+# OS
+.DS_Store

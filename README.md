@@ -1,57 +1,46 @@
-# AI Consultant WP
+# AI Consultant GROK
 
-Сучасний AI-чатбот на базі **Grok (xAI)** для WordPress 6.9.
+**Сучасний AI-чатбот на базі Grok (xAI) для WordPress**
 
-![сам чат](https://github.com/Ruslan-Bilohash/ai-consultant-wp/blob/main/screen/chat.jpg)
+![AI Consultant GROK](https://github.com/Ruslan-Bilohash/ai-consultant-wp/blob/main/screen/chat.jpg)
 
-Плагін перетворює ваш сайт на розумного консультанта, який працює 24/7, відповідає клієнтам, збирає контакти та допомагає підвищувати продажі.
+Плагін перетворює ваш сайт на **розумного 24/7 консультанта**, який самостійно відповідає клієнтам, збирає заявки та допомагає підвищувати продажі.
 
 ### Основні можливості
 
-- Повна інтеграція з **Grok xAI API**
-- Гнучкий **системний промпт** — можеш описати будь-яку роль бота
-- Красивий адаптивний дизайн чату з кастомізацією кольорів
-- Інтеграція з **Telegram** (сповіщення про нові повідомлення)
-- Авто-відкриття чату з налаштуванням затримки
-- Перевірка оновлень прямо в адмінці
-- Висока безпека та оптимізація
+- ⚡ Повна інтеграція з **Grok xAI** (найсучасніша модель)
+- 🧠 Гнучкий **системний промпт** — задавайте боту будь-яку роль
+- 🎨 Красивий адаптивний дизайн з повною кастомізацією кольорів і градієнтів
+- 📲 Миттєві сповіщення в **Telegram** (повідомлення клієнта + відповідь бота)
+- 📱 Авто-відкриття чату з налаштуванням затримки
+- 💾 Автоматичне збереження історії розмов
+- 🔒 Високий рівень безпеки та оптимізації
+- 🔄 Перевірка оновлень прямо в адмін-панелі
 
 ### Скріншоти
 
 #### Адмін-панель налаштувань
-
 ![Загальні налаштування](https://github.com/Ruslan-Bilohash/ai-consultant-wp/blob/main/screen/admin_main.jpg)
-
-![Інструкція для бота (системний промпт)](https://github.com/Ruslan-Bilohash/ai-consultant-wp/blob/main/screen/instruction_bot.jpg)
-
+![Інструкція для бота](https://github.com/Ruslan-Bilohash/ai-consultant-wp/blob/main/screen/instruction_bot.jpg)
 ![Дизайн чату](https://github.com/Ruslan-Bilohash/ai-consultant-wp/blob/main/screen/designe_chat.jpg)
-
 ![Плаваючий віджет](https://github.com/Ruslan-Bilohash/ai-consultant-wp/blob/main/screen/wigets.jpg)
-
 ![Grok API](https://github.com/Ruslan-Bilohash/ai-consultant-wp/blob/main/screen/api_grok_key.jpg)
-
 ![Telegram налаштування](https://github.com/Ruslan-Bilohash/ai-consultant-wp/blob/main/screen/api_telegram_key.jpg)
-
-![Вкладка Оновлення](https://github.com/Ruslan-Bilohash/ai-consultant-wp/blob/main/screen/upgrade.jpg)
-**Загальні налаштування**  
-**Інструкція для бота (системний промпт)**  
-**Дизайн чату**  
-**Плаваючий віджет**  
-**Grok API**  
-**Telegram**  
-**Вкладка Оновлення**
 
 ### Встановлення
 
-1. Завантажте плагін як ZIP
-2. Встановіть через **Плагіни → Додати новий → Завантажити плагін**
-3. Активуйте плагін
-4. Перейдіть у **AI Consultant WP → Налаштування**
-5. Вставте Grok xAI API ключ і налаштуйте промпт
+1. Завантажте плагін як ZIP-архів
+2. Перейдіть у WordPress: **Плагіни → Додати новий → Завантажити плагін**
+3. Встановіть та активуйте плагін
+4. Перейдіть у меню **AI Consultant GROK → Налаштування**
+5. Вставте ключ Grok xAI та налаштуйте промпт
 
-### Отримання Grok API ключа
+### Як отримати Grok API ключ
 
-Перейдіть на [console.x.ai](https://console.x.ai), увійдіть через акаунт X і створіть новий API ключ.
+1. Перейдіть на [console.x.ai](https://console.x.ai/)
+2. Увійдіть через ваш акаунт **X (Twitter)**
+3. Натисніть **"Create new API key"**
+4. Скопіюйте ключ (починається з `gsk_`) і вставте в налаштування плагіна
 
 ### Ліцензія
 
@@ -59,9 +48,17 @@ GPL-2.0-or-later
 
 ### Автор
 
-**Руслан Билогаш**  Норвегія  
-[GitHub](https://github.com/ruslan-bilohash) | [Сайт](https://bilohash.com/ai/wordpress)
+**Руслан Билогаш** — Норвегія 🇳🇴
+
+- [GitHub](https://github.com/Ruslan-Bilohash)
+- [Сайт плагіна](https://bilohash.com/ai/wordpress)
+- [Donate](https://bilohash.com/donate.php)
 
 ---
 
-Хочете запропонувати покращення? Відкривайте [Issue](https://github.com/ruslan-bilohash/ai-consultant-wp/issues)
+Хочете запропонувати покращення або знайти помилку?  
+Відкривайте [Issue](https://github.com/Ruslan-Bilohash/ai-consultant-wp/issues) — буду радий!
+
+---
+
+*Powered by Grok xAI • Made with ❤️ in Norway*

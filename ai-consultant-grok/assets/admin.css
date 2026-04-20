@@ -1,0 +1,199 @@
+/**
+ * AI Consultant GROK Admin Styles
+ * Version: 2.5.0
+ * Author: Ruslan Bilohash
+ */
+
+.ai-consultant-grok-settings .wrap {
+    max-width: 1280px;
+    margin: 20px 20px 0 0;
+}
+
+.ai-consultant-grok-header {
+    background: linear-gradient(135deg, #0a0a2e 0%, #1f1f52 100%);
+    color: #ffffff;
+    padding: 32px 30px;
+    border-radius: 16px;
+    margin-bottom: 35px;
+    box-shadow: 0 12px 45px rgba(0, 245, 255, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.ai-logo-icon {
+    font-size: 78px;
+    width: 78px;
+    height: 78px;
+    color: #ffffff;
+    filter: drop-shadow(0 0 15px #00f5ff);
+}
+
+.ai-consultant-grok-header .header-left h1 {
+    margin: 0 0 8px 0;
+    font-size: 36px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.version-info {
+    margin: 0;
+    font-size: 16.5px;
+    opacity: 0.95;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.header-btn,
+.pro-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14.5px;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.header-btn {
+    background: rgba(255,255,255,0.12);
+    color: #ffffff;
+}
+
+.header-btn:hover {
+    background: #00f5ff;
+    color: #0a0a2e;
+    transform: translateY(-2px);
+}
+
+.pro-btn {
+    background: linear-gradient(135deg, #ff1a4d, #e60033);
+    color: #ffffff;
+    box-shadow: 0 6px 20px rgba(255, 26, 77, 0.45);
+}
+
+.pro-btn:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 12px 30px rgba(255, 26, 77, 0.6);
+}
+
+/* Tabs */
+.nav-tab-wrapper {
+    margin: 25px 0 35px;
+    border-bottom: 2px solid #e2e4e7;
+}
+
+.nav-tab {
+    padding: 14px 24px;
+    font-size: 15px;
+    border: 1px solid #c3c4c7;
+    border-bottom: none;
+    background: #fff;
+    margin-bottom: -1px;
+    transition: all 0.2s ease;
+}
+
+.nav-tab-active {
+    border-color: #00aaff #00aaff #fff;
+    background: #fff;
+    color: #00aaff;
+    font-weight: 600;
+}
+
+/* Content */
+.tab-content {
+    padding: 35px;
+    background: #fff;
+    border: 1px solid #c3c4c7;
+    border-top: none;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+/* Form */
+.form-table th {
+    width: 280px;
+    vertical-align: top;
+    padding-top: 14px;
+    font-weight: 600;
+}
+
+.description {
+    font-size: 13.8px;
+    color: #555;
+    margin-top: 6px;
+    line-height: 1.5;
+}
+
+/* Color pickers */
+.color-picker-group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.color-picker-group input[type="color"] {
+    width: 85px;
+    height: 48px;
+    padding: 4px;
+    border: 3px solid #ddd;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.color-value {
+    font-family: 'SF Mono', Consolas, monospace;
+    font-size: 15.5px;
+    background: #f1f1f1;
+    padding: 10px 14px;
+    border-radius: 8px;
+    min-width: 130px;
+    text-align: center;
+    border: 1px solid #e0e0e0;
+}
+
+/* Save button */
+.save-btn {
+    background: linear-gradient(135deg, #00cc66, #00aa55) !important;
+    color: #ffffff !important;
+    padding: 16px 36px !important;
+    font-size: 17px !important;
+    font-weight: 700 !important;
+    border-radius: 50px !important;
+    box-shadow: 0 8px 25px rgba(0, 204, 102, 0.4) !important;
+    transition: all 0.3s ease;
+}
+
+.save-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(0, 204, 102, 0.55) !important;
+}
+
+/* Notices */
+.notice-warning p,
+.notice-info p,
+.notice-success p {
+    color: #000000 !important;
+    font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 782px) {
+    .ai-consultant-grok-settings .wrap {
+        margin: 10px;
+    }
+    .tab-content {
+        padding: 20px 15px;
+    }
+}
